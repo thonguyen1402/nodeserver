@@ -9,14 +9,19 @@ router.get('/', function (req, res) {
     });
 });
 
-var contactController = require('./contactController.js')
-
-router.route("/contact")
-.get(contactController.index)
-.post(contactController.new)
-router.route('/contact/:contact_id')
-.get(contactController.view)
-.put(contactController.update)
-.delete(contactController.delete)
+var booktableController = require('../controllers/Controller_book-table.js')
+// var orderonlineController = require('../controller/Controller_order-online.js')
+//routing book table service
+router.route("/booktable")
+.get(booktableController.index)
+.post(booktableController.new)
+router.route('/booktable/:table_id')
+.get(booktableController.view)
+.put(booktableController.update)
+.delete(booktableController.delete)
+//routing order online service
+// router.route('/orderonline')
+// .get(orderonlineController.index)
+// .post(orderonlineController.new)
 // Export API routes
 module.exports = router;
