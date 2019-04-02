@@ -16,6 +16,9 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use('/sign',signRouters);
 app.use('/api',apiRouters);
+app.get('/',function(req, res){
+	res.render("home")
+})
 
 //set config mongoose
 mongoose.connect("mongodb://localhost/my_db");
